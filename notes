@@ -1,0 +1,20 @@
+insert time		append time	
+tiny	    20.458	μs,	    82.417	μs,
+small	    30.709	μs,	    91.125	μs,
+medium	    167.333	μs,	    131.041	μs,
+large	    9.0502  ms,	    460.875	μs,
+EXlarge	    775.3404 ms,	2.2795  ms
+
+	        insert	 % increase	    | append   % increase
+            time μs                  time μs
+    tiny	20.458 |		        | 82.417	
+    small	30.709 |	50.11%	    | 91.125	10.57%
+    medium	167.33 |	444.90%	    | 131.041	43.80%
+    large	  9050 |    5308.38%	| 460.875	251.70%
+    EXlarge	775340 |	8467.29%	| 2279.5	394.60%
+
+				
+With each change of array size is a 10x in input size, it is interesting to see how the actual run time increases. For the first increase, from tiny to small, there is about a 50% increase in run time for insert, and close to a 10% increase in run time for append. When you make the jump from small to medium, a 10x increase in input increases the runtime for insert by over 5x, but for append, it only increases by about 50%.
+The increases get more and more drastic as the inputs increase, but far worse with the insert than the append. This means the append function scales much better than the insert function. 
+
+The reason the insert function is so much slower is because with each additional input, you have essentially n+1 more moves you have to make, not just one additional move. 
