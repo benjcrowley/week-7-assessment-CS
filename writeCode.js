@@ -47,6 +47,10 @@ function hasUniqueChars(str) {
     return true
 }
 //this function has a linear time complexity, O(n) because there is a for loop that will run the length of the string. The interesting thing is that n wont go above 45 for the time being
+/**EDIT: ~~ i found out that includes is O(n) in complexity, which would make this a quadratic time complexity
+ * using a Set() could improve time complexity
+ */
+
 //the space complexity for this function is also lineaer, because we are creating a new string with length n
 
 let longestWordEnteredInTheMostTrustedEnglishDictionaries = "Pneumonoultramicroscopicsilicovolcanoconiosis"
